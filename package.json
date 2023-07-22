@@ -5,11 +5,13 @@
   "main": "server.js",
   "scripts": {
     "start": "node app.js", 
-    "build": "netlify-lambda build functions" 
+    "build": "echo 'No build step required for serverless function'"
+ 
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "cors": "^2.8.5"
+    "cors": "^2.8.5",
+    "serverless-http": "^3.2.0"
   }
 }

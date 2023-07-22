@@ -1,7 +1,8 @@
 const express = require('express');
 const cors = require('cors');
-const app = express();
+const serverless = require('serverless-http');
 
+const app = express();
 app.use(cors());
 
 
@@ -76,4 +77,4 @@ function generateChartData(month, userType) {
   return chartData;
 }
 
-exports.handler = app;
+module.exports.handler = serverless(app);
