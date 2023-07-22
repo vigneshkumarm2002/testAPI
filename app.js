@@ -4,8 +4,8 @@ const app = express();
 
 app.use(cors());
 
-// Define an API endpoint
-app.get('/api/chart-data', (req, res) => {
+
+app.get('/.netlify/functions/chart-data', (req, res) => {
   // Get the requested month from query parameters
   const requestedMonth = req.query.month;
 
@@ -21,7 +21,8 @@ app.get('/api/chart-data', (req, res) => {
   });
 });
 
-// Start the server
+
+
 const port = 5001;
 app.listen(port, () => {
   console.log(`API server listening on port ${port}`);
@@ -74,3 +75,5 @@ function generateChartData(month, userType) {
 
   return chartData;
 }
+
+exports.handler = app;
